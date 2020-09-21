@@ -9,9 +9,16 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
+    @State private var text:String = ""
+    
     var body: some View {
-        Button("Update Widget") {
-            updateWidget(withText: "123 test")
+        VStack {
+            Form {
+                TextField("Enter text:", text: $text)
+                Button("Update Widget") {
+                    updateWidget(withText: text)
+                }
+            }
         }
     }
     
