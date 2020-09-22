@@ -10,6 +10,7 @@ import WidgetKit
 
 struct ContentView: View {
     @State private var text:String = ""
+    private let appGroupName = "group.com.gfrigerio.WidgetTest"
     
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct ContentView: View {
     }
     
     func updateWidget(withText:String) {
-        let defaults = UserDefaults.init(suiteName: "group.com.gfrigerio.WidgetTest")
+        let defaults = UserDefaults.init(suiteName: appGroupName )
         defaults?.set(withText, forKey: "Text")
         defaults?.synchronize()
         
